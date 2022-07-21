@@ -1,0 +1,23 @@
+.dashboard{
+    padding: 8px;
+    background-color: #B0B0B0;
+    border-bottom: 4px solid black;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .Link{
+    font-size: 18px;
+    background-color: #0072E1;
+    color: white;
+    border-radius: 10px;
+    padding: 8px;
+    border: 3px black solid;
+    margin: 0 10px;
+    width: 150px;
+    text-decoration: none;
+  }
+  .Link:hover{
+    background-color: #B0B0B0;
+    color: black;
+  }

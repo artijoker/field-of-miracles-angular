@@ -1,0 +1,24 @@
+
+<div *ngIf="records.length === 0" class='RecordsTable'>
+    Нет данных
+</div>
+<div *ngIf="records.length > 0" class='RecordsTable'>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Счет</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records; index as i;">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{record.name}}</td>
+                    <td>{{record.score}}</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+</div>

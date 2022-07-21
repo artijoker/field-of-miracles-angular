@@ -1,0 +1,71 @@
+<div *ngIf="isOnGame === false" class="Game">
+    <button (click)="startGame()">
+        Новая игра
+    </button>
+    <div class="question">
+        <p>
+            Добро пожаловать в игру "Поле чудес".<br />
+            В этой игре вам предстоит угадывать слова.
+            Вводить можно одну букву или слово целиком.<br />
+            За каждую правильную букву вам будут начисляться очки.<br />
+            За каждый неправильный букву у вас будут сниматься очки и попытки,
+            всего попыток {{remainingAttempts}}.<br />
+            Когда закончатся попытки игра завершится.<br />
+            Если ввести слово целиком и оно окажется верным вы получите дополнительные очки<br />
+            иначе случае вы теряете все очки и игра завершится.
+        </p>
+    </div>
+    <div class="letters">
+        <div class="letter">П</div>
+        <div class="letter">О</div>
+        <div class="letter">Л</div>
+        <div class="letter">Е</div>
+        <div class="letter"> </div>
+        <div class="letter">Ч</div>
+        <div class="letter">У</div>
+        <div class="letter">Д</div>
+        <div class="letter">Е</div>
+        <div class="letter">С</div>
+    </div>
+
+</div>
+<div *ngIf="isOnGame === true" class="Game">
+    <button [disabled]="!isWordOpen()" (click)="saveRecord()">
+        Завершить игру
+    </button>
+    <button [disabled]="!isWordOpen()" (click)="nextWord()">
+        Следуещее слово
+    </button>
+    <button (click)="resetGame()">
+        Сброс игры
+    </button>
+    <div class="score">Счет: {{score}}</div>
+    <div class="question">
+        {{question}}
+    </div>
+    <div class="letters">
+        <div *ngFor="let letter of partialAnswer.split('')">
+            <p *ngIf="letter === '-'" class="letter"></p>
+            <p *ngIf="letter !== '-'" class="letter">{{letter.toUpperCase()}}</p>
+        </div>
+    </div>
+    <div>
+        <button [disabled]="isOneLetter" (click)="changeInputType()">
+            Ввод по одной букве
+        </button>
+        <button [disabled]="!isOneLetter" (click)="changeInputType()">
+            Ввод слова целиком
+        </button>
+    </div>
+    <div>
+        <p>
+            <input [disabled]="isBlockInput" type="text" name="inputValue" [value]="inputValue"
+                (input)="onChangeInput($event)" />
+        </p>
+        <p>
+            <button [disabled]="isBlockInput" (click)="checkWin()">
+                Проверить
+            </button>
+        </p>
+    </div>
+</div>

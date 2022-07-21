@@ -1,0 +1,56 @@
+.Game button{
+    font-size: 15px;
+    padding: 8px;
+    margin: 5px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+.Game button:hover:enabled{
+    background-color: #8E3232;
+    color: white;
+    cursor: pointer;
+}
+
+.Game input{
+    font-size: 15px;
+    padding: 5px;
+}
+.question{
+    height: 200px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #D9D9D9;
+}
+
+
+.letters{
+    display: flex;
+    justify-content:center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.letter{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 5px;
+    background-color: #D9D9D9;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.score{
+    padding: 10px;
+    font-size: 20px;
+    color: #D9D9D9;
+    
+}
