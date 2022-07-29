@@ -18,11 +18,4 @@ if (isset($data["name"]) && isset($data["score"])) {
             ":score" => $data["score"]
         ]
     );
-
-    $sql = "select * from records";
-    $request = $pdo->prepare($sql);
-    $request->execute();
-    $records = $request->fetchAll(PDO::FETCH_ASSOC);
-
-    echo json_encode($records);
 }
